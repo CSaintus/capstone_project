@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Stock List</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Sector</th>
+                <th>Industry</th>
+                <th>Market Cap</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>Change Percent</th>
+                <th>Volume</th>
+                <th>Avg Volume</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+            <tr>
+                <td>{{ stock.symbol }}</td>
+                <td>{{ stock.name }}</td>
+                <td>{{ stock.sector }}</td>
+                <td>{{ stock.industry }}</td>
+                <td>{{ stock.market_cap }}</td>
+                <td>{{ stock.price }}</td>
+                <td>{{ stock.change }}</td>
+                <td>{{ stock.change_percent }}</td>
+                <td>{{ stock.volume }}</td>
+                <td>{{ stock.avg_volume }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
